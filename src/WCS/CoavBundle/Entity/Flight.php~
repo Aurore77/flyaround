@@ -192,4 +192,49 @@ class Flight
     {
         return $this->plane;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $reservation;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->reservation = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add reservation
+     *
+     * @param \WCS\CoavBundle\Entity\Reservation $reservation
+     * @return Flight
+     */
+    public function addReservation(\WCS\CoavBundle\Entity\Reservation $reservation)
+    {
+        $this->reservation[] = $reservation;
+
+        return $this;
+    }
+
+    /**
+     * Remove reservation
+     *
+     * @param \WCS\CoavBundle\Entity\Reservation $reservation
+     */
+    public function removeReservation(\WCS\CoavBundle\Entity\Reservation $reservation)
+    {
+        $this->reservation->removeElement($reservation);
+    }
+
+    /**
+     * Get reservation
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getReservation()
+    {
+        return $this->reservation;
+    }
 }

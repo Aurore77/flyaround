@@ -28,6 +28,6 @@ WCS\CoavBundle\Entity\PlaneModel:
     lifecycleCallbacks: {  }
 
     OneTomany:
-        flight:
+        plane:
             targetEntity: WCS\CoavBundle\Entity\Flight
-            inversedBy: flights
+            inversedBy: planes
