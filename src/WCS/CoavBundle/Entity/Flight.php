@@ -275,4 +275,43 @@ class Flight
     {
         return $this->flight;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $planes;
+
+
+    /**
+     * Add plane
+     *
+     * @param \WCS\CoavBundle\Entity\Reservation $plane
+     *
+     * @return Flight
+     */
+    public function addPlane(\WCS\CoavBundle\Entity\Reservation $plane)
+    {
+        $this->planes[] = $plane;
+
+        return $this;
+    }
+
+    /**
+     * Remove plane
+     *
+     * @param \WCS\CoavBundle\Entity\Reservation $plane
+     */
+    public function removePlane(\WCS\CoavBundle\Entity\Reservation $plane)
+    {
+        $this->planes->removeElement($plane);
+    }
+
+    /**
+     * Get planes
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPlanes()
+    {
+        return $this->planes;
+    }
 }

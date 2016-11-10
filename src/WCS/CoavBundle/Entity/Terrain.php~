@@ -244,4 +244,42 @@ class Terrain
     {
         return $this->departures;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $reservations;
+
+
+    /**
+     * Add reservations
+     *
+     * @param \WCS\CoavBundle\Entity\Reservation $reservations
+     * @return Terrain
+     */
+    public function addReservation(\WCS\CoavBundle\Entity\Reservation $reservations)
+    {
+        $this->reservations[] = $reservations;
+
+        return $this;
+    }
+
+    /**
+     * Remove reservations
+     *
+     * @param \WCS\CoavBundle\Entity\Reservation $reservations
+     */
+    public function removeReservation(\WCS\CoavBundle\Entity\Reservation $reservations)
+    {
+        $this->reservations->removeElement($reservations);
+    }
+
+    /**
+     * Get reservations
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getReservations()
+    {
+        return $this->reservations;
+    }
 }

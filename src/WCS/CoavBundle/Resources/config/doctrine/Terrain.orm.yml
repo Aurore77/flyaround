@@ -27,7 +27,11 @@ WCS\CoavBundle\Entity\Terrain:
             length: 255
     lifecycleCallbacks: {  }
 
-    manyToMany:
-        reservations:
+    OneToMany:
+        departures:
             targetEntity: WCS\CoavBundle\Entity\Reservation
-            inversedBy: passengers
+            mappeddBy: departure
+
+        arrivals:
+            targetEntity: WCS\CoavBundle\Entity\Reservation
+            mappedBy: arrival
