@@ -27,7 +27,7 @@ WCS\CoavBundle\Entity\PlaneModel:
             length: 255
     lifecycleCallbacks: {  }
 
-    OneTomany:
-        plane:
+    oneToMany:
+        planes:
             targetEntity: WCS\CoavBundle\Entity\Flight
-            inversedBy: planes
+            inversedBy: plane
